@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+        <style>
+            #map { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+            .house-description { padding: 4px; background-color: antiquewhite; margin: -10px -10px -10px -10px; 
+            border-radius: 4px; }
+        </style>
+    </head>
+    <body>
+        <div id="map"></div>
+        <script>
+            var map = L.map('map').setView([10, 0], 2.5);
+            
+            L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=O3HwDMgtqcy5weLoOAmD', {
+                attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+            }).addTo(map);
+
+            var markerIcon = L.icon ({ 
+                iconUrl: 'images/house.png', 
+                iconSize: [40, 40],
+                iconAnchor: [19, 37],
+                popupAnchor: [2, -34] 
+            });
+
+            var marker = L.marker([37.7927, -122.4275], {
+                color: "#ee2299",
+                fillColor: '0044aa',
+                icon: markerIcon,
+            }).addTo(map);
+            marker.bindPopup("<div class='house-description'>Spreckels Mansion</div>");
+
+            /* var polygon = L.polygon([[51.509, -0.08], [51.503, -0.06], [51.51, -0.047]], {
+                color: 'red',
+                fillColor: '#aa0055',
+                fillOpacity: 0.3,
+            }).addTo(map);
+            polygon.bindPopup("This is a <br> space") */
+        </script>
+    </body>
+</html>
