@@ -1,0 +1,21 @@
+{ "houses": [
+    
+    {"Name": "Spreckels Mansion",
+    "City": "San Francisco",
+    "Country": "United States",
+    "Address": "2080 Washington Street",
+    "Coordinates": "37.7927, -122.4275",
+    "Owners": "Danielle Steel",
+    "Description": "none",
+    "Links": [
+        {"Link": "https://en.wikipedia.org/wiki/Spreckels_Mansion_(San_Francisco)",
+        "Source": "Wikipedia"},
+        {"Link": "https://earth.google.com/web/@37.79262878,-122.42765432,115.9089947a,116.7949015d,35y,44.67352256h,49.99714156t,0r",
+        "Source": "Google Earth"}
+    ],
+    "Image": "",
+    "Price": "$100,000,000"},
+
+    {}
+]
+}

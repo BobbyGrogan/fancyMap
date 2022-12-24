@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Test</title>
+    </head>
+    <style>
+        .house { padding: 4px; background-color: antiquewhite; margin: -6px -6px -6px -6px; 
+            border-radius: 9px; }
+        .house ul { color: blue; }
+        .house ul li { list-style: none; }
+        .house ul p { color: blue; }
+        .house ul div a { color: blue; }
+        .description { cursor: pointer; padding: 18px; width: 100%; }
+        .active, .description:hover { background-color: #ccc;}
+        .description-content { padding: 0 18px; display: none; overflow: hidden; background-color: #f1f1f1; } 
+
+    </style>
+    <body>
+        <div class="house">
+            <ul>
+                <h3>Spreckels Mansion</h3>
+                <li>2080 Washington Street</li>
+                <li>Owned by <a href="https://en.wikipedia.org/wiki/Danielle_Steel">Danielle Steel</a></li>
+                <li>Estimated Price: $100,000,000</li>
+
+                <button type="button" class="description">House Description</button>
+                <div class="description-content">
+                  <p>The Spreckels Mansion was built in 1928 by the famed architect. It was recently purchased at a price of 1000000 by daniele steel. It is one of the most notable houses in san francsisco and is one of the few guilded age mansions which are still in private hands.</p>
+                </div> 
+                <div>
+                    <a href="https://en.wikipedia.org/wiki/Spreckels_Mansion_(San_Francisco)">Wikipedia</a>
+                    <a style="float: right;" href="https://earth.google.com/web/@37.79262878,-122.42765432,115.9089947a,116.7949015d,35y,44.67352256h,49.99714156t,0r">Google Earth</a>
+                </div>
+            </ul>
+        </div>
+        <script>
+             var coll = document.getElementsByClassName("description");
+                var i;
+
+                for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                    content.style.display = "none";
+                    } else {
+                    content.style.display = "block";
+                    }
+                });
+                } 
+        </script>
+    </body>
+</html>
